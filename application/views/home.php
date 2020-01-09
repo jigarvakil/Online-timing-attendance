@@ -39,7 +39,38 @@
             <div class="card-body">
 
               <div class="row">
-                <div class="col-md-12 text-right">
+                <div class="col-md-6 text-left">
+                      <?php
+                         $totalEntry=0;
+                         $totalLateEntry=0;
+                         $totalEarlyExit=0;
+                         $totalExit=0;       
+                        foreach($record as $datarecord)
+                        {
+                          if($datarecord->status==1)
+                          {
+                            if($datarecord->reason!=null)
+                            {
+                              $totalLateEntry++;
+                            }
+                            $totalEntry++;
+                          }
+                          else
+                          {
+                            if($datarecord->reason!=null)
+                            {
+                              $totalEarlyExit++;
+                            }
+                            $totalExit++;
+                          }
+                        }
+
+                      echo "<span class='badge badge-success'> Total Entries = $totalEntry </span> <span class='badge badge-danger'>Late Entries = $totalLateEntry</span> ";
+                      echo "<br><span class='badge badge-success'> Total Exits = $totalExit </span> <span class='badge badge-danger'>Early Exits = $totalEarlyExit</span> ";
+
+                      ?>
+                </div>
+                <div class="col-md-6 text-right">
                   <!-- Button trigger modal -->
                   <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modelId">
                     + Add New Entry
@@ -60,7 +91,7 @@
                     <th>Time</th>
                     <th>Status</th>
                     <th>reason</th>
-
+                    <th>Action</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -88,8 +119,8 @@
               </table>
             </div>
             <div class="card-footer">
-              <span class="text-center text-sm-left d-md-inline-block">Copyright © 2019-2020 Daily Entrance/Exit v1.0 |
-                All Rights Reserved.</span>
+              <span class="">Copyright © 2020-2021  <a class='badge bage-secondary' target="_blank" href="https://jigarvakil.github.io/Attend" > Daily Entrance/Exit v1.0 </a>  |
+                All Rights Reserved </span>
             </div>
           </div>
         </div>
@@ -172,8 +203,8 @@
     });
     </script>
     <script>
-    
-     
+
+
     </script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
