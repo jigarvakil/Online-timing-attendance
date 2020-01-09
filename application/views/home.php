@@ -71,7 +71,7 @@
 
                   <tr>
                     <td scope="row"><?= $i++ ?></td>
-                    <td><?= date_format(date_create($recordRow->dt_date),'d--Y') ?></td>
+                    <td><?= date_format(date_create($recordRow->dt_date),'d-F-Y') ?></td>
                     <td><?= $recordRow->sz_time ?></td>
                     <td>
                       <?php if($recordRow->status==1) echo "<span class='badge badge-success'>Entry</span>"; else echo "<span class='badge badge-danger'>Exit</span>"; ?>
