@@ -119,7 +119,7 @@
               </table>
             </div>
             <div class="card-footer">
-              <span class="">Copyright © 2020-2021  <a class='badge bage-secondary' target="_blank" href="https://jigarvakil.github.io/Attend" > Daily Entrance/Exit v1.0 </a>  |
+              <span class="">Copyright © 2020-2021  <a class='badge bage-secondary' target="_blank" href="https://jigarvakil.github.io/Online-timing-attendance/" > Daily Entrance/Exit v1.0 </a>  |
                 All Rights Reserved </span>
             </div>
           </div>
