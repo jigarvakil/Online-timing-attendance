@@ -19,7 +19,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   </head>
 
   <body>
@@ -105,11 +105,13 @@
                     <td><?= date_format(date_create($recordRow->dt_date),'d-F-Y') ?></td>
                     <td><?= $recordRow->sz_time ?></td>
                     <td>
-                      <?php if($recordRow->status==1) echo "<span class='badge badge-success'>Entry</span>"; else echo "<span class='badge badge-danger'>Exit</span>"; ?>
+                      <?php if($recordRow->status==1) echo "<span class='font-weight-bold text-success'>Entry</span>"; else echo "<span class='font-weight-bold text-danger'>Exit</span>"; ?>
                     </td>
-                    <td><?php if($recordRow->reason==null) echo "No Reason Avalible"; else echo $recordRow->reason ?>
+                    <td><?php if($recordRow->reason==null) echo "<span class='badge badge-success'>No Reason Avalible</span>"; else echo "<span class='badge badge-warning'>".$recordRow->reason."</span>" ?>
                     </td>
-
+                    <td>
+                        <a href="<?= base_url() ?>Welcome/DeleteRecord/<?= $recordRow->nm_recordid ?>" class="text-danger"><i class="fas fa-trash"></i></a>
+                    </td>
 
                   </tr>
                   <?php

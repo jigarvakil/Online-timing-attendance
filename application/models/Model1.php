@@ -28,6 +28,12 @@ class Model1 extends CI_Model {
         $this->db->insert( $tblname, $data );
 
     }
+
+    public function DeleteData( $tblname, $data ) {
+        $this->db->where( $data );
+        $this->db->delete( $tblname );
+
+    }
 }
 
 /* End of file Model1.php */

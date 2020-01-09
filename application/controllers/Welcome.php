@@ -125,5 +125,15 @@ class Welcome extends CI_Controller {
 	}
 
 
+	public function DeleteRecord(){
+		$id= $this->uri->segment(3);
+		$data=array(
+			'nm_recordid'=>$id
+		);
+		$this->m1->DeleteData('tbl_record',$data);
+		
+		redirect(base_url().'Welcome/home','refresh');
+		
+	}
 
 }
